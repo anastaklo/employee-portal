@@ -10,13 +10,13 @@
         <groupId>org.anastaklo</groupId>
         <artifactId>employee-portal</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
     <dependencies>
         <dependency>
             <groupId>org.anastaklo</groupId>
             <artifactId>api-out</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
-        
+        </dependency>        
     </dependencies>
 </project>
