@@ -3,7 +3,9 @@ package org.anastaklo.portal.adapter.persistence;
 import org.anastaklo.portal.port.out.GetPersonalDataPort;
 import org.anastaklo.portal.port.out.PersonJpaEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PersonAdapter implements GetPersonalDataPort {
     
     @Autowired
@@ -12,6 +14,6 @@ public class PersonAdapter implements GetPersonalDataPort {
     @Override
     public PersonJpaEntity getPersonalData(long id) {
 
-        return null;
+        return personRepository.findById(id).orElseThrow();
     }
 }
