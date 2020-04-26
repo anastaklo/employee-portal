@@ -1,0 +1,19 @@
+
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        default_schema: portal
+  datasource:
+    url: jdbc:postgresql://localhost:5432/employee_portal
+    username: postgres
+    password: password
+  flyway:
+    schemas: portal
+    enabled: false
+server:
+  port: 8080
+  ssl:
+    enabled: false
+    

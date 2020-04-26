@@ -1,5 +1,7 @@
 package org.anastaklo.portal.port.out;
 
+import org.anastaklo.portal.entities.Employee;
+
 public interface GetPersonalDataPort {
-    PersonJpaEntity getPersonalData(long id);
+    Employee getPersonalData(long id);
 }

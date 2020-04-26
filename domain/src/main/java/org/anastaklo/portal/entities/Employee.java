@@ -4,11 +4,12 @@ import java.time.LocalDate;
 import lombok.Data;
 
 @Data
-public class Person {
+public class Employee {
     
     private String firstName;
+    private String middleName;
     private String lastName;
-    private LocalDate birthDate;
+    private LocalDate dateOfBirth;
     private String email;
     private String phone;
     private LocalDate startWorkDate;
