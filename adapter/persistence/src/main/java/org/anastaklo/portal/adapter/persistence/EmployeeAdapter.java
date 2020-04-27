@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class EmployeeAdapter implements GetPersonalDataPort {
     
     @Autowired
-    ModelMapper mapper;
+    private ModelMapper mapper;
     @Autowired
     private EmployeeRepository employeeRepository;
     
