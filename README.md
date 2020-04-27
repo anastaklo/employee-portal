@@ -1,4 +1,8 @@
-# employee-portal
-## Application purpose
+# README
 
-This is a web application for employees. It allows to view an information about colleagues, to work with calendars, manage vacations, to do a mailing (i.e. a mailing about new colleagues, birthday reminders).
+This is a web application for employees. It allows users to view some information about their colleagues, to work with their calendars, manage their vacations, send newsletters \(i.e. e-mailing about new colleagues, birthday reminders\).
+
+`[insert here a gif with some usage]`
+
+## Installation guide
+
