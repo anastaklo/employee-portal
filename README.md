@@ -4,7 +4,7 @@ This is a web application for employees. It allows users to view some informatio
 
 `[insert here a gif with some usage]`
 
-`[add reference to git-book]`
+For more detailed information see [Employee portal documentation](https://anastaklo.gitbook.io/employee-portal/)
 
 ## Installation guide
 
