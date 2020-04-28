@@ -32,5 +32,7 @@ It's an example of hexagonal style architecture.
 
 ## Contributors
 
-![Anastasiia Klochkova - architecture design, backend dev, devops, documentation](.gitbook/assets/ak.png)
+![](.gitbook/assets/ak.png)
+
+Anastasiia Klochkova - architecture design, backend dev, devops, documentation
 
