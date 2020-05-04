@@ -5,29 +5,27 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
 import lombok.Getter;
-import lombok.NonNull;
 import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "document")
 public class DocumentJpaEntity extends BaseJpaEntity{
     
     @Column
-    @Getter
-    @Setter
-    @NonNull
+    @NotBlank
+    @Max(100)
     private String label;
 
     @Column
-    @Getter
-    @Setter
-    @NonNull
+    @NotBlank
+    @Max(400)
     private String path;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @NonNull
-    @Getter
-    @Setter
     private EventJpaEntity event;
 }

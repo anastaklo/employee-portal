@@ -7,39 +7,36 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "project")
 public class ProjectJpaEntity extends BaseJpaEntity{
 
     @Column
-    @Getter
-    @Setter
-    @NonNull
+    @NotBlank
+    @Max(50)
     private String name;
 
     @Column
-    @Getter
-    @Setter
+    @Max(3000)
     private String description;
 
     @Column(name = "start_date")
-    @Getter
-    @Setter
     @NonNull
     private LocalDateTime startDate;
 
     @Column(name = "finish_date")
-    @Getter
-    @Setter
     private LocalDateTime finishDate;
     
     @ManyToMany(mappedBy = "projects")
-    @Getter
-    @Setter
-    @NonNull
+    @NotEmpty
     private Set<EmployeeJpaEntity> employees = new HashSet<>();
 }

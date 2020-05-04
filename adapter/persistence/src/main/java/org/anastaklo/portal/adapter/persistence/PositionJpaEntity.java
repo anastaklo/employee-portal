@@ -6,29 +6,29 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import lombok.Getter;
-import lombok.NonNull;
 import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "position")
 public class PositionJpaEntity extends BaseJpaEntity{
 
     @Column
-    @Getter
-    @Setter
-    @NonNull
+    @NotBlank
+    @Max(100)
     private String name;
 
     @Column
-    @Getter
-    @Setter
-    @NonNull
-    private String category; //todo: maybe change this field to just 'isManager'?
+    @NotBlank
+    @Max(20)
+    private String category;
     
     @OneToMany(mappedBy = "position")
-    @Getter
-    @Setter
-    @NonNull
+    @NotEmpty
     private List<EmployeeJpaEntity> employees = new ArrayList<>();
 }

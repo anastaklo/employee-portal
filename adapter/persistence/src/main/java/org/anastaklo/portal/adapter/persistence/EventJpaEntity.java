@@ -10,56 +10,47 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "event")
 public class EventJpaEntity extends BaseJpaEntity {
     
     @Column(name = "start_date")
-    @Getter
-    @Setter
     @NonNull
     private LocalDateTime startDate;
 
     @Column(name = "finish_date")
-    @Getter
-    @Setter
     @NonNull
     private LocalDateTime finishDate;
     
     @Column
-    @Getter
-    @Setter
-    @NonNull
-    private String type;
+    @NotBlank
+    @Max(50)
+    private String type; //todo: change to enum type
 
     @Column
-    @Getter
-    @Setter
+    @Max(255)
     private String comment;
 
     @Column
-    @Getter
-    @Setter
-    @NonNull
-    private String status;
+    @NotBlank
+    @Max(50)
+    private String status; //todo: change to enum type
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @Getter
-    @Setter
     @NonNull
     private CalendarJpaEntity calendar;
     
     @OneToMany(mappedBy = "event")
-    @Getter
-    @Setter
     private List<DocumentJpaEntity> documents = new ArrayList<>();
     
     @OneToOne(mappedBy = "event")
-    @Getter
-    @Setter
     private VacationRequestJpaEntity vacationRequest;
 }

@@ -8,39 +8,37 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "office")
 public class OfficeJpaEntity extends BaseJpaEntity{
     
     @Column
-    @Getter
-    @Setter
+    @Max(50)
     private String name;
 
     @Column
-    @Getter
-    @Setter
+    @Max(500)
     private String address;
 
     @Column
-    @NonNull
-    @Getter
-    @Setter
+    @NotBlank
+    @Max(10)
     private String zip;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @Getter
-    @Setter
     @NonNull
     private CityJpaEntity city;
     
     @OneToMany(mappedBy = "office")
-    @Getter
-    @Setter
-    @NonNull
+    @NotEmpty
     private List<RoomJpaEntity> rooms = new ArrayList<>();
 }

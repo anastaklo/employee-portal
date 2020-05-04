@@ -8,11 +8,15 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "vacation_request")
 public class VacationRequestJpaEntity {
 
@@ -20,28 +24,21 @@ public class VacationRequestJpaEntity {
     private VacationRequestId id;
     
     @OneToOne(fetch = FetchType.LAZY)
-    @Getter
-    @Setter
     @NonNull
     private EventJpaEntity event;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @Getter
-    @Setter
     @NonNull
     private EmployeeJpaEntity manager;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Getter
-    @Setter
     @NonNull
     private EmployeeJpaEntity employee;
     
     @Column
-    @Getter
-    @Setter
-    @NonNull
-    private String status;
+    @NotBlank
+    @Max(50)
+    private String status; //todo: change to enum type
 
     @Override
     public int hashCode() {
