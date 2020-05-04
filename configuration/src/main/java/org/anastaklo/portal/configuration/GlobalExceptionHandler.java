@@ -14,14 +14,14 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ConstraintViolationException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
-    String handleConstraintViolationException(ConstraintViolationException e) {
+    public String handleConstraintViolationException(ConstraintViolationException e) {
         return "not valid due to validation error: " + e.getMessage();
     }
     
     @ExceptionHandler(NoSuchElementException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ResponseBody
-    String handleNoSuchElementException() {
+    public String handleNoSuchElementException() {
         return "entity doesn't exist";
     }
 }
