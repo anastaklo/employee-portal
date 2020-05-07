@@ -1,6 +1,6 @@
 # Table of contents
 
-* [README](README.md)
+* [README](../README.md)
 * [Work plan](work-plan.md)
 * [Application purpose](application-purpose.md)
 * [Terms and abbreviations](terms-and-abbreviations.md)

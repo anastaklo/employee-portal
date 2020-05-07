@@ -42,7 +42,6 @@
     </tr>
     <tr>
       <td style="text-align:left">
-        <p></p>
         <p>Screens with transitions:</p>
         <ol>
           <li>Personal information - done</li>
@@ -72,7 +71,6 @@
     </tr>
     <tr>
       <td style="text-align:left">
-        <p></p>
         <p>Entity diagram and description</p>
         <ul>
           <li>display of UML arrows + legend (see articles)</li>
@@ -126,7 +124,6 @@
     </tr>
     <tr>
       <td style="text-align:left">
-        <p></p>
         <p>Split the project to modules</p>
         <ul>
           <li>refactor pom.xml</li>
