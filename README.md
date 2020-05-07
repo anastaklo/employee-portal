@@ -1,5 +1,7 @@
 # README
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/84668d10e2c741e387d0509ea629472e)](https://app.codacy.com/manual/korrobka15/employee-portal?utm_source=github.com&utm_medium=referral&utm_content=anastaklo/employee-portal&utm_campaign=Badge_Grade_Dashboard)
+
 This is a web application for employees. It allows users to view some information about their colleagues, to work with their calendars, manage their vacations, send newsletters \(i.e. e-mailing about new colleagues, birthday reminders\).
 
 `[insert here a gif with some usage]`
