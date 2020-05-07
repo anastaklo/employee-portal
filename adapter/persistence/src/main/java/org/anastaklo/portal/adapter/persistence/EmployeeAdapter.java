@@ -3,17 +3,20 @@ package org.anastaklo.portal.adapter.persistence;
 import org.anastaklo.portal.entities.Employee;
 import org.anastaklo.portal.port.out.GetPersonalDataPort;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class EmployeeAdapter implements GetPersonalDataPort {
     
-    @Autowired
-    private ModelMapper mapper;
-    @Autowired
-    private EmployeeRepository employeeRepository;
-    
+    private final ModelMapper mapper;
+    private final EmployeeRepository employeeRepository;
+
+    public EmployeeAdapter(ModelMapper mapper, EmployeeRepository employeeRepository) {
+
+        this.mapper = mapper;
+        this.employeeRepository = employeeRepository;
+    }
+
     @Override
     public Employee getPersonalData(long id) {
 
