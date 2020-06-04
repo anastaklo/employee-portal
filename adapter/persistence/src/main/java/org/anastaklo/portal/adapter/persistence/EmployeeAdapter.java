@@ -1,5 +1,7 @@
 package org.anastaklo.portal.adapter.persistence;
 
+import org.anastaklo.portal.adapter.persistence.entity.EmployeeJpaEntity;
+import org.anastaklo.portal.adapter.persistence.repository.EmployeeRepository;
 import org.anastaklo.portal.entities.Employee;
 import org.anastaklo.portal.port.out.GetPersonalDataPort;
 import org.modelmapper.ModelMapper;

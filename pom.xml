@@ -18,7 +18,7 @@
         <version>2.2.6.RELEASE</version>
     </parent>
     <properties>
-        <java.version>14</java.version>
+        <java.version>13</java.version>
         <portal.module.version>1.0-SNAPSHOT</portal.module.version>
     </properties>
     

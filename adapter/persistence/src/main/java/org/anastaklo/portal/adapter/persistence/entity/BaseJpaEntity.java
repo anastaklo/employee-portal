@@ -1,4 +1,4 @@
-package org.anastaklo.portal.adapter.persistence;
+package org.anastaklo.portal.adapter.persistence.entity;
 
 import java.util.Objects;
 import javax.persistence.GeneratedValue;

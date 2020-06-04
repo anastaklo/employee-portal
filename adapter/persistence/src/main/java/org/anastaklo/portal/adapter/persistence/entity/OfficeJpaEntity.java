@@ -1,4 +1,4 @@
-package org.anastaklo.portal.adapter.persistence;
+package org.anastaklo.portal.adapter.persistence.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +8,9 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.DecimalMax;
-import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
@@ -19,23 +18,27 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "room")
-public class RoomJpaEntity extends BaseJpaEntity {
+@Table(name = "office")
+public class OfficeJpaEntity extends BaseJpaEntity{
     
     @Column
-    @DecimalMin("0")
-    @DecimalMax("200")
-    private int floor;
-    
+    @Max(50)
+    private String name;
+
+    @Column
+    @Max(500)
+    private String address;
+
     @Column
     @NotBlank
-    @Max(15)
-    private String number;
+    @Max(10)
+    private String zip;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @NonNull
-    private OfficeJpaEntity office;
+    private CityJpaEntity city;
     
-    @OneToMany(mappedBy = "room")
-    private List<EmployeeJpaEntity> employees = new ArrayList<>();
+    @OneToMany(mappedBy = "office")
+    @NotEmpty
+    private List<RoomJpaEntity> rooms = new ArrayList<>();
 }

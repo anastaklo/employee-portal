@@ -1,4 +1,4 @@
-package org.anastaklo.portal.adapter.persistence;
+package org.anastaklo.portal.adapter.persistence.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

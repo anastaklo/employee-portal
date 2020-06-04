@@ -1,4 +1,4 @@
-package org.anastaklo.portal.adapter.persistence;
+package org.anastaklo.portal.adapter.persistence.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,27 +18,19 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "office")
-public class OfficeJpaEntity extends BaseJpaEntity{
-    
-    @Column
-    @Max(50)
-    private String name;
-
-    @Column
-    @Max(500)
-    private String address;
+@Table(name = "city")
+public class CityJpaEntity extends BaseJpaEntity{
 
     @Column
     @NotBlank
-    @Max(10)
-    private String zip;
+    @Max(100)
+    private String name;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @NonNull
-    private CityJpaEntity city;
+    private CountryJpaEntity country;
     
-    @OneToMany(mappedBy = "office")
+    @OneToMany(mappedBy = "city")
     @NotEmpty
-    private List<RoomJpaEntity> rooms = new ArrayList<>();
+    private List<OfficeJpaEntity> offices = new ArrayList<>();
 }
