@@ -2,7 +2,9 @@ package org.anastaklo.portal.port.out;
 
 import org.anastaklo.portal.entities.Role;
 
-public interface GetRolePort {
+import java.util.List;
 
-    Role getRole(long id);
+public interface GetRolesPort {
+
+    List<Role> getRoles();
 }

@@ -2,7 +2,9 @@ package org.anastaklo.portal.port.in;
 
 import org.anastaklo.portal.entities.Role;
 
-public interface GetRoleQuery {
+import java.util.List;
 
-    Role getRole(long roleId);
+public interface GetRolesQuery {
+
+    List<Role> getRoles();
 }
